@@ -5,6 +5,10 @@ import App from './App'
 import './index.css'
 
 ReactDOM.render(
-  <BrowserRouter><App /></BrowserRouter>,
+  <BrowserRouter
+    basename={process.env.REACT_APP_BASE_PATH || '/'}
+  >
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
