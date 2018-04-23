@@ -19,7 +19,7 @@ class BookshelfChanger extends Component {
       currentBookshelf: event.target.value,
       updating: true
     });
-  };
+  }
 
   componentWillReceiveProps(){
     // Remove the process indicator
