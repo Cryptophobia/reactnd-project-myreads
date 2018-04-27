@@ -7,7 +7,8 @@ import Book from "./Book";
 class Search extends Component{
   static propTypes = {
     books: PropTypes.array.isRequired,
-    changeBookshelf: PropTypes.func.isRequired
+    changeBookshelf: PropTypes.func.isRequired,
+    updateQuery: PropTypes.func.isRequired
   };
 
   updateQuery = (query) => {
@@ -43,6 +44,11 @@ class Search extends Component{
                   changeBookshelf={this.props.changeBookshelf} />
               </li>
             ))}
+            {this.props.books.length === 0 && (
+              <div class="contact-list-item">
+                <h4>Search did not return any books. Please fix or run a query.</h4>
+              </div>
+            )}
           </ol>
         </div>
       </div>
